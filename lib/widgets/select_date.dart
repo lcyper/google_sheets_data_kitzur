@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sheets_data_kitzur/cubit/content_cubit.dart';
+import 'package:google_sheets_data_kitzur/helpers/string_extension.dart';
+import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:kosher_dart/kosher_dart.dart';
 
@@ -22,13 +24,15 @@ class _SelectDateState extends State<SelectDate> {
   @override
   void initState() {
     super.initState();
-    hebrewDateFormatter.hebrewFormat = true; // optional
-    // hebrewDateFormatter.useGershGershayim = true; // optional
+    initializeDateFormatting();
+    // hebrewDateFormatter.hebrewFormat = true; // optional
+    hebrewDateFormatter.useGershGershayim = false; // optional
   }
 
   @override
   Widget build(BuildContext context) {
-    String formattedDate = DateFormat('d/M/y').format(_currentDate);
+    String formattedDate =
+        DateFormat(DateFormat.WEEKDAY, 'es').format(_currentDate);
     jewishCalendar.setDate(_currentDate);
     String hebrewDate = hebrewDateFormatter.format(
       jewishCalendar,
@@ -41,6 +45,7 @@ class _SelectDateState extends State<SelectDate> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
+              iconSize: 24 * 1.5,
               color: Theme.of(context).colorScheme.primary,
               onPressed: () {
                 updateDate(_currentDate.subtract(const Duration(days: 1)));
@@ -54,22 +59,38 @@ class _SelectDateState extends State<SelectDate> {
                   initialDate: _currentDate,
                   firstDate: DateTime(DateTime.now().year - 1),
                   lastDate: DateTime(DateTime.now().year + 1),
+                  locale: const Locale('es'),
                 );
                 if (selectedDate != null) {
                   updateDate(selectedDate);
                 }
               },
-              child: Text(
-                formattedDate,
-                style: Theme.of(context).textTheme.caption?.copyWith(
-                      color: Theme.of(context)
-                          .colorScheme
-                          .primary
-                          .withOpacity(0.8),
-                    ),
+              child: Column(
+                children: [
+                  Text(
+                    hebrewDate,
+                    // formattedDate,
+                    style: Theme.of(context).textTheme.button?.copyWith(
+                          color: Theme.of(context)
+                              .colorScheme
+                              .primary
+                              .withOpacity(0.8),
+                        ),
+                  ),
+                  Text(
+                    formattedDate.capitalize(),
+                    style: Theme.of(context).textTheme.button?.copyWith(
+                          color: Theme.of(context)
+                              .colorScheme
+                              .primary
+                              .withOpacity(0.8),
+                        ),
+                  ),
+                ],
               ),
             ),
             IconButton(
+              iconSize: 24 * 1.5,
               color: Theme.of(context).colorScheme.primary,
               onPressed: () {
                 updateDate(_currentDate.add(const Duration(days: 1)));
@@ -78,12 +99,12 @@ class _SelectDateState extends State<SelectDate> {
             ),
           ],
         ),
-        Text(
-          hebrewDate,
-          style: Theme.of(context).textTheme.subtitle2?.copyWith(
-                color: Theme.of(context).colorScheme.secondary,
-              ),
-        )
+        // Text(
+        //   hebrewDate,
+        //   style: Theme.of(context).textTheme.subtitle2?.copyWith(
+        //         color: Theme.of(context).colorScheme.secondary,
+        //       ),
+        // ),
       ],
     );
   }

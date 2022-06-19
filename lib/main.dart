@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_sheets_data_kitzur/cubit/content_cubit.dart';
 import 'package:google_sheets_data_kitzur/home_screen.dart';
 
@@ -32,7 +33,11 @@ class MyApp extends StatelessWidget {
           ),
         ),
         home: const HomePage(),
+        localizationsDelegates: const [GlobalMaterialLocalizations.delegate],
         locale: const Locale('es'),
+        supportedLocales: const [
+          Locale('es'),
+        ],
       ),
     );
   }

@@ -29,8 +29,8 @@ class HomePage extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       'El estudio de hoy es: ${state.message}',
-                      style: Theme.of(context).textTheme.headline5?.copyWith(
-                            color: Theme.of(context).hintColor,
+                      style: Theme.of(context).textTheme.headline4?.copyWith(
+                            color: Theme.of(context).colorScheme.primary,
                           ),
                       textAlign: TextAlign.center,
                     ),
@@ -47,11 +47,15 @@ class HomePage extends StatelessWidget {
                 children: [
                   Text(
                     'Dedicado en memoria de anonimo',
-                    style: Theme.of(context).textTheme.subtitle1,
+                    style: Theme.of(context).textTheme.headline6?.copyWith(
+                          color: Theme.of(context).hintColor,
+                        ),
                   ),
                   Text(
                     'Desarrollado por lcyper',
-                    style: Theme.of(context).textTheme.caption,
+                    style: Theme.of(context).textTheme.subtitle1?.copyWith(
+                          color: Theme.of(context).hintColor,
+                        ),
                   ),
                 ],
               ),
