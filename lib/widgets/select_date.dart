@@ -41,6 +41,7 @@ class _SelectDateState extends State<SelectDate> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
+              color: Theme.of(context).colorScheme.primary,
               onPressed: () {
                 updateDate(_currentDate.subtract(const Duration(days: 1)));
               },
@@ -58,9 +59,18 @@ class _SelectDateState extends State<SelectDate> {
                   updateDate(selectedDate);
                 }
               },
-              child: Text(formattedDate),
+              child: Text(
+                formattedDate,
+                style: Theme.of(context).textTheme.caption?.copyWith(
+                      color: Theme.of(context)
+                          .colorScheme
+                          .primary
+                          .withOpacity(0.8),
+                    ),
+              ),
             ),
             IconButton(
+              color: Theme.of(context).colorScheme.primary,
               onPressed: () {
                 updateDate(_currentDate.add(const Duration(days: 1)));
               },
@@ -68,7 +78,12 @@ class _SelectDateState extends State<SelectDate> {
             ),
           ],
         ),
-        Text(hebrewDate)
+        Text(
+          hebrewDate,
+          style: Theme.of(context).textTheme.subtitle2?.copyWith(
+                color: Theme.of(context).colorScheme.secondary,
+              ),
+        )
       ],
     );
   }

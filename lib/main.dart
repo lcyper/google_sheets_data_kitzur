@@ -15,10 +15,21 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => ContentCubit(),
       child: MaterialApp(
+        themeMode: ThemeMode.system,
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'Kitzur Tip',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          colorScheme: const ColorScheme.light(
+            primary: Colors.blue,
+            secondary: Colors.deepPurple,
+          ),
+        ),
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
+          colorScheme: ColorScheme.dark(
+            primary: Colors.yellow.shade200,
+            secondary: Colors.blue.shade300,
+          ),
         ),
         home: const HomePage(),
         locale: const Locale('es'),

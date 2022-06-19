@@ -18,9 +18,23 @@ class HomePage extends StatelessWidget {
               bloc: context.read<ContentCubit>()..getData(DateTime.now()),
               builder: (context, state) {
                 if (state is ContentError) {
-                  return Text(state.message);
+                  return Text(
+                    state.message,
+                    style: Theme.of(context).textTheme.bodyText1?.copyWith(
+                          color: Theme.of(context).errorColor,
+                        ),
+                  );
                 } else if (state is ContentData) {
-                  return Text('El estudio de hoy es: ${state.message}');
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'El estudio de hoy es: ${state.message}',
+                      style: Theme.of(context).textTheme.headline5?.copyWith(
+                            color: Theme.of(context).hintColor,
+                          ),
+                      textAlign: TextAlign.center,
+                    ),
+                  );
                 } else {
                   // (state is ContentLoading)
                   return const CircularProgressIndicator.adaptive();
@@ -31,8 +45,14 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 18),
               child: Column(
                 children: [
-                  const Text('Dedicado en memoria de anonimo'),
-                  const Text('Desarrollado por lcyper'),
+                  Text(
+                    'Dedicado en memoria de anonimo',
+                    style: Theme.of(context).textTheme.subtitle1,
+                  ),
+                  Text(
+                    'Desarrollado por lcyper',
+                    style: Theme.of(context).textTheme.caption,
+                  ),
                 ],
               ),
             ),
