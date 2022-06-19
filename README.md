@@ -28,5 +28,6 @@ One way that i use to reduce my app size is to use:
 
 ### Tareas
 - [x] Armar la App
-- [ ] Nombre de la app
-- [ ] Icono de la app
+- [x] Nombre de la app
+- [x] Icono de la app
+- [x] Tema claro y oscuro
