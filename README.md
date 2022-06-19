@@ -1,16 +1,32 @@
 # google_sheets_data_kitzur
 
-A new Flutter project.
+A Flutter project.
+--------------
 
-## Getting Started
+One way that i use to reduce my app size is to use:
+    ```
+    flutter clean
+    flutter pub get
+    flutter build apk
+    flutter build ipa
+    -------------
+    flutter build
+    flutter build apk appbundle --target-platform android-arm,android-arm64
+    flutter build appbundle
+    ```
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## Sobre el Proyecto
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Requisitos
+- traer los datos que toca estudiar ese dia
+- poder seleccionar otra fecha
+- dedicatoria
+- sobre el desarrollador
+- que funcione offline
+- hacepte tema claro y oscuro
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Tareas
+- [x] Armar la App
+- [ ] Nombre de la app
+- [ ] Icono de la app
