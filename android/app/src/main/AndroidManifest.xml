@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.google_sheets_data_kitzur">
    <application
-        android:label="google_sheets_data_kitzur"
+        android:label="Kitzur Tip"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
