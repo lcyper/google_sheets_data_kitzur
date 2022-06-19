@@ -31,3 +31,10 @@ One way that i use to reduce my app size is to use:
 - [x] Nombre de la app
 - [x] Icono de la app
 - [x] Tema claro y oscuro
+
+
+### Contenido relacionado
+- Imagenes del [Rab Yosef Caro Author original del libro](https://www.etsy.com/mx/listing/216634626/judaismo-retrato-especial-al-oleo-sobre) Kitzur Shuljan Aruj.
+- [Documento de Google Sheets](https://docs.google.com/spreadsheets/d/1ZrQoS8icsexeMsEFkNveCQgcshF50z8a2kQYcEmJAVY/)
+- el texto del libro en ingles y hebreo se podria sacar de [aca](https://www.chabad.org/library/article_cdo/aid/4297832/jewish/Kitzur-Shulchan-Aruch.htm)
+- 
